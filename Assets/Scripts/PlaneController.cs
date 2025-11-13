@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlaneController : MonoBehaviour
 {
     public float verticalInput;
-    
+    public GameObject projectilePrefab;
     public float pitchSpeed= 10.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,6 +16,6 @@ public class PlaneController : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.right, Time.deltaTime * pitchSpeed * verticalInput);
-
+        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
     }
 }
