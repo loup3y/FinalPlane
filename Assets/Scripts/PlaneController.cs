@@ -28,7 +28,7 @@ public class PlaneController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space)) { Instantiate(projectilePrefab, gunMount.transform.position, transform.rotation); }
 
-        // Instantiate(projectilePrefab, gunMount.transform.position, transform.rotation); 
+         
         if (transform.position.z > planeBoundhorizontal) {Destroy(gameObject); }
         else if (transform.position.z < -planeBoundhorizontal) { Destroy(gameObject); }
         if (transform.position.y > planeBoundvertical) { Destroy(gameObject); }
