@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneController
   verticalInput: 0
-  speed: 50
+  projectilePrefab: {fileID: 5720309953790763430, guid: 52192c3e2e9e8104fb092d5d9ca5b6a7, type: 3}
   pitchSpeed: 40
 --- !u!114 &7438671575447969058
 MonoBehaviour:
