@@ -8,8 +8,11 @@ public class PlaneController : MonoBehaviour
     public GameObject projectilePrefab;
     public float pitchSpeed= 10.0f;
     public GameObject gunMount;
-    private float planeBoundhorizontal = 50;
-    private float planeBoundvertical = 50;
+    public float fireDelay = 0.1f;
+    public float chamber = 0.0f;
+   
+   // private float planeBoundhorizontal = 50;
+   // private float planeBoundvertical = 50;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,12 +29,18 @@ public class PlaneController : MonoBehaviour
        
         transform.Rotate(Vector3.right, Time.deltaTime * pitchSpeed * verticalInput);
 
-        if (Input.GetKey(KeyCode.Space)) { Instantiate(projectilePrefab, gunMount.transform.position, transform.rotation); }
-
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Time.time >= chamber) 
+            { Instantiate(projectilePrefab, gunMount.transform.position, transform.rotation);
+                chamber = Time.time + fireDelay;
+            }
+        }
+        else if (Time.time< chamber) { float remaining = chamber - Time.time; }
          
-        if (transform.position.z > planeBoundhorizontal) {Destroy(gameObject); }
-        else if (transform.position.z < -planeBoundhorizontal) { Destroy(gameObject); }
-        if (transform.position.y > planeBoundvertical) { Destroy(gameObject); }
-        else if(transform.position.y < -planeBoundvertical) { Destroy(gameObject); }
+       // if (transform.position.z > planeBoundhorizontal) {Destroy(gameObject); }
+       // else if (transform.position.z < -planeBoundhorizontal) { Destroy(gameObject); }
+       // if (transform.position.y > planeBoundvertical) { Destroy(gameObject); }
+        //else if(transform.position.y < -planeBoundvertical) { Destroy(gameObject); }
     }
 }
