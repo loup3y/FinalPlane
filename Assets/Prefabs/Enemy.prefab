@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2033181277350912709}
   - component: {fileID: 5039833270364697555}
   - component: {fileID: 4037712897316573329}
+  - component: {fileID: 2775160382156253331}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -124,4 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532a15016fdb9174c9536d51637a1fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBackward
-  speed: -50
+  speed: -5
+--- !u!114 &2775160382156253331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2386725948648523346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6dc906b1c44744bb125c470a8e2e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collisions

@@ -13,4 +13,9 @@ public class Collisions : MonoBehaviour
     {
         
     }
+    void OnTriggerEnter(Collider Other)
+    {
+        Destroy(gameObject);
+        Destroy(Other.gameObject);
+    }
 }
